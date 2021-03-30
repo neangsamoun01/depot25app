@@ -21,7 +21,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-mongoose.connect(process.env.DATABASE_URL,{useNewUrlParser:true})
+mongoose.connect('mongodb+srv://dev_depot:Pa$$w0rd@cluster0.phsjy.mongodb.net/depot25app?retryWrites=true&w=majority',{useNewUrlParser:true})
 const db = mongoose.connection
 db.on('error', error => console.error(error))
 db.once('open',()=>console.log('connected to Mongoose'))
